@@ -66,6 +66,20 @@ public class UserRepository {
         return typedQuery.getResultList();
     }
 
+
+    public User getUserById(int id) {
+        try {
+            entityManager.getTransaction().begin();
+            User user = entityManager.find(User.class, id);
+            entityManager.getTransaction().commit();
+            return user;
+        } catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+            return null; // Return null in case of an exception or if the user is not found
+        }
+    }
+
     public void getUserByName(String userName) {
         String query = "SELECT u FROM User u WHERE u.name = :userName";
         TypedQuery<User> typedQuery = entityManager.createQuery(query, User.class);

@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         UserService service = new UserService();
 
-        User user = new User();
+//        User user = new User();
 //        user.setName("Peter");
 //        user.setPassword("789");
 //        user.setEmail("peter@bitdynamics.sr");
@@ -28,10 +28,20 @@ public class Main {
 //        String name = "John";
 //        user.setName(name);
 
-        service.getUserByName("John");
-        System.out.println(service);
+//        service.getUserByName("John");
+//        System.out.println(service);
+
+//        service.getUserById(3);
+//        System.out.println();
 
 //        List<User> users = service.getUsers();
 //        users.forEach(user -> System.out.println("Name = " + user.getName() + " " + "Password = " + user.getPassword() + " " + "Email = " + user.getEmail()));
+
+        User userById = service.getUserById(3);
+        if (userById != null) {
+            System.out.println("User by ID: " + userById);
+        } else {
+            System.out.println("User not found for ID 3");
+        }
     }
 }
