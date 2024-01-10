@@ -13,6 +13,10 @@ public class UserService {
         this.repository = new UserRepository(JPAConfiguration.getEntityManager());
     }
 
+    public void getUserByName(String name) {
+        repository.getUserByName(name);
+    }
+
     public void updateUser(User user) {
         repository.updateUser(user);
     }

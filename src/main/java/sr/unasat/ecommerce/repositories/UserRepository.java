@@ -1,6 +1,7 @@
 package sr.unasat.ecommerce.repositories;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceException;
 import jakarta.persistence.TypedQuery;
 import sr.unasat.ecommerce.entities.User;
@@ -60,8 +61,20 @@ public class UserRepository {
      * @Description Get all users from table
      */
     public List<User> getUsers() {
-        String query = "select g from User g";
+        String query = "select u from User u";
         TypedQuery<User> typedQuery = entityManager.createQuery(query, User.class);
         return typedQuery.getResultList();
     }
+
+    public void getUserByName(String userName) {
+        String query = "SELECT u FROM User u WHERE u.name = :userName";
+        TypedQuery<User> typedQuery = entityManager.createQuery(query, User.class);
+        typedQuery.setParameter("userName", userName);
+
+        try {
+            typedQuery.getSingleResult();
+        } catch (NoResultException ignored) {
+        }
+    }
+
 }
