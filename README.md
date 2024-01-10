@@ -6,9 +6,7 @@ Welcome to our Simple E-commerce App! This README provides an overview of the pr
 ## Table of Contents
 - [Introduction](#introduction)
 - [Technologies](#technologies)
-- [Setup](#setup)
-- [Contributing](#contributing)
-- [License](#license)
+- [Issues](#issues)
 
 ## Introduction
 This project is a straightforward E-commerce application built with Java, utilizing the Hibernate framework as the ORM (Object-Relational Mapping) tool and Maven as the build tool. The aim is to provide a minimalistic example of an online shopping experience.
@@ -18,15 +16,13 @@ This project is a straightforward E-commerce application built with Java, utiliz
 - **Hibernate:** An ORM framework for mapping Java objects to database tables.
 - **Maven:** A build automation tool for managing dependencies and building the project.
 
-## Setup
-1. Clone the repository: `git clone https://github.com/yourusername/simple-ecommerce-app.git`
-2. Navigate to the project directory: `cd simple-ecommerce-app`
-3. Build the project using Maven: `mvn clean install`
-4. Configure the database settings in `src/main/resources/application.properties`.
-5. Run the application: `java -jar target/simple-ecommerce-app.jar`
+## Issues
+**Done but can still benefit from improvements**
+1. get user by id
+2. get all users
+3. create user
+4. delete user
 
-## Contributing
-Contributions are welcome! Please follow the [contribution guidelines](CONTRIBUTING.md).
-
-## License
-This project is licensed under the [MIT License](LICENSE).
+**Shit that still needs to be fixed**
+1. update user 
+2. get user by name
