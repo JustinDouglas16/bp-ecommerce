@@ -8,6 +8,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         UserService service = new UserService();
+
 //        User user = new User();
 //        user.setName("Peter");
 //        user.setPassword("789");
@@ -16,8 +17,6 @@ public class Main {
 //        service.createUser(user);
 
         List<User> users = service.getUsers();
-        users.forEach(user -> {
-            System.out.println("Name = " + user.getName() + " " + "Password = " + user.getPassword() + " " + "Email = " + user.getEmail());
-        });
+        users.forEach(user -> System.out.println("Name = " + user.getName() + " " + "Password = " + user.getPassword() + " " + "Email = " + user.getEmail()));
     }
 }
