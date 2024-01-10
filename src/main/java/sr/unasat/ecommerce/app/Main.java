@@ -37,11 +37,16 @@ public class Main {
 //        List<User> users = service.getUsers();
 //        users.forEach(user -> System.out.println("Name = " + user.getName() + " " + "Password = " + user.getPassword() + " " + "Email = " + user.getEmail()));
 
+        //normal way
+//        User userById = service.getUserById(3);
+//        if (userById != null) {
+//            System.out.println("User by ID: " + userById);
+//        } else {
+//            System.out.println("User not found for ID 3");
+//        }
+
+        //ternary operator
         User userById = service.getUserById(3);
-        if (userById != null) {
-            System.out.println("User by ID: " + userById);
-        } else {
-            System.out.println("User not found for ID 3");
-        }
+        System.out.println("User by ID: " + (userById != null ? userById : "User not found for ID 3"));
     }
 }
